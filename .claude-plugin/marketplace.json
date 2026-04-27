@@ -1,0 +1,23 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "great-engineers",
+  "description": "Nine engineering personas (Carmack, Hopper, Knuth, Torvalds, DHH, Hejlsberg, Eich, Dijkstra, Sandi Metz) + four MVP skills for technical specs, design reviews, and project initialization. Drafted via cross-plugin orchestration with great-authors writers. v0.1 MVP.",
+  "owner": {
+    "name": "Seth Shoultes",
+    "url": "https://github.com/sethshoultes"
+  },
+  "plugins": [
+    {
+      "name": "great-engineers",
+      "description": "Nine engineering personas + four operational skills (engineers-channel, engineers-project-init, engineers-write-spec, engineers-design-review). Companion to great-minds, great-authors, great-filmmakers, great-publishers, great-marketers. For Claude Code.",
+      "source": "./",
+      "category": "productivity"
+    },
+    {
+      "name": "great-engineers-dxt",
+      "description": "Same personas and skills as great-engineers, packaged as a Claude Desktop extension. Build: cd distribution/dxt && npm install && npx @anthropic-ai/dxt pack",
+      "source": "./distribution/dxt",
+      "category": "productivity"
+    }
+  ]
+}

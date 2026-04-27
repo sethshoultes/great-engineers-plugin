@@ -1,0 +1,42 @@
+{
+  "dxt_version": "0.1",
+  "name": "great-engineers",
+  "display_name": "Great Engineers",
+  "version": "0.1.0",
+  "description": "Nine engineering personas (Carmack, Hopper, Knuth, Torvalds, DHH, Hejlsberg, Eich, Dijkstra, Sandi Metz) plus four MVP tools for technical specs, design reviews, and project initialization. Drafted via cross-plugin orchestration with great-authors writers. Margaret Hamilton stays in great-minds (cross-dispatchable for QA work).",
+  "long_description": "Channel software-engineering craft from nine canonical figures: John Carmack on systems performance, Grace Hopper on compilers and accessibility, Don Knuth on rigor and literate programming, Linus Torvalds on kernel discipline, DHH on pragmatic web architecture, Anders Hejlsberg on language and API design, Brendan Eich on web platform constraints, Edsger Dijkstra on formal correctness, Sandi Metz on object-oriented refactor for clarity. Pair with great-authors (prose), great-filmmakers (film), great-publishers (publication form), great-marketers (marketing), great-minds (strategy + Margaret Hamilton on QA, cross-dispatchable) to compose a full creative-and-engineering pipeline. Substantive output saves to engineering/<artifact-type>/<slug>.md by default.",
+  "author": {
+    "name": "Seth Shoultes",
+    "email": "seth@caseproof.com"
+  },
+  "server": {
+    "type": "node",
+    "entry_point": "server/index.js",
+    "mcp_config": {
+      "command": "node",
+      "args": ["${__dirname}/server/index.js"]
+    }
+  },
+  "tools": [
+    {
+      "name": "list_engineers",
+      "description": "List the nine engineering personas with one-line descriptions of each."
+    },
+    {
+      "name": "engineers_channel",
+      "description": "Return a prompt that loads a named engineering persona into the conversation for direct collaboration on systems design, code review, technical specs, language and API choices, or any engineering question. Substantive output (specs, reviews, technical proposals) auto-saves to engineering/<artifact-type>/<slug>.md. Valid: john-carmack, grace-hopper, don-knuth, linus-torvalds, dhh, anders-hejlsberg, brendan-eich, edsger-dijkstra, sandi-metz (short forms accepted: carmack, hopper, knuth, linus, anders, brendan, edsger, sandi). For QA / test design, dispatch great-minds:margaret-hamilton-qa instead."
+    },
+    {
+      "name": "engineers_project_init",
+      "description": "Return a prompt that scaffolds an engineering/ directory at the project root (sibling to manuscript/, film/, publishers/, marketing/) and updates CLAUDE.md with an ## Engineering section. Subdirs: specs/, reviews/, runbooks/. Reads the project specification (README, CLAUDE.md, manifest, ADRs) to import context."
+    },
+    {
+      "name": "engineers_write_spec",
+      "description": "Return a prompt that produces a technical spec / design doc for a feature or system change. Default persona auto-selected by signal — Hejlsberg for language/API, Carmack for performance, Knuth for algorithm correctness, DHH for pragmatic web app, Sandi Metz for refactor, Torvalds for kernel-level, Eich for web platform, Hopper for documentation/accessibility, Dijkstra for formal correctness. Override available. Saves to engineering/specs/<slug>.md."
+    },
+    {
+      "name": "engineers_design_review",
+      "description": "Return a prompt that dispatches engineering personas to review existing code, architecture, or a draft spec. Default panel: Sandi Metz + Torvalds + Carmack. Override available. Output is a consolidated review with per-persona verdicts and a single highest-leverage recommendation. Saves to engineering/reviews/<slug>.md."
+    }
+  ]
+}

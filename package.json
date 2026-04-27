@@ -1,0 +1,9 @@
+{
+  "name": "great-engineers",
+  "version": "0.1.0",
+  "description": "Nine engineering personas + four MVP skills for technical specs, design reviews, and project initialization. Sixth in the Caseproof persona constellation.",
+  "author": "Seth Shoultes <seth@caseproof.com>",
+  "repository": "github:sethshoultes/great-engineers-plugin",
+  "license": "MIT",
+  "keywords": ["engineering", "software-craft", "code-review", "design-review", "personas", "claude-code-plugin"]
+}
